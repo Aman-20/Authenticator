@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 
 
-mongoose.connect("mongodb+srv://rnafork:aman110304@cluster0.t30fq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect("paste your mongoBD Atlas link here", {
     dbName:"Authenticator"
 }).then(console.log("Mongoose is connected..."));
 
