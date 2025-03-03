@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout-Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Hello! <%= locals.name %> </h1>
+    <h1>Your Email is: <%= locals.gmail %> </h1>
+    <h1>Your password is: <%= locals.pass %> </h1>
+    <h1>Click on the button to LogOut</h1>
+
+
+    <form action="/logout" method="get">
+       
+        <button>LogOut</button>
+
+    </form>
+</body>
+</html>
