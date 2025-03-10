@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 import express from 'express';
 import bcrypt from 'bcrypt';
 import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -12,7 +14,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 
 
-mongoose.connect("paste your mongoBD Atlas link here", {
+mongoose.connect(process.env.MONGODB_CONNECT, {
     dbName:"Authenticator"
 }).then(console.log("Mongoose is connected..."));
 
@@ -22,14 +24,14 @@ const anyschema = mongoose.Schema({
     pass:String
 });
 
-const anymodel = await mongoose.model("registers2", anyschema);
+const anymodel = await mongoose.model("registers5", anyschema);
 
 app.get('/', async(req, res)=>{
     const token = req.cookies.token;
     if(token){
         const decode = jwt.verify(token, 'aman');
         req.aman = await anymodel.findById(decode.id);
-        res.render('logout.ejs');
+        res.render('logout.ejs', { name: req.aman.name, gmail: req.aman.gmail, pass: req.aman.pass });
     } else {
         res.redirect('/login');
     }
