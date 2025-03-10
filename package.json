@@ -1,0 +1,31 @@
+{
+  "name": "authenticator",
+  "version": "1.0.0",
+  "description": "-> this is a simple backend code which contain \r 1) Login Page\r 2) Register Page\r 3) Logout Page",
+  "main": "Authenticator.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aman-20/Authenticator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aman-20/Authenticator/issues"
+  },
+  "homepage": "https://github.com/Aman-20/Authenticator#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.1",
+    "path": "^0.12.7"
+  }
+}
